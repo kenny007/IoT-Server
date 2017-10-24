@@ -24,6 +24,7 @@ j = 0
 
 while True:
     oled.fill(0)
+
     oled.text(buf[j%len(buf):]+buf, 10, 10)
     oled.show()
     sleep_ms(20)
