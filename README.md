@@ -11,8 +11,10 @@ Python 3.x
 Running:
 First clone the repository to your computer via Git. Following commands are for Linux, Mac and Windows.
 
+'''
 git clone https://github.com/kenny007/IoT-Server.git
 cd IoT-Server
+'''
 
 On your machine
 
@@ -21,14 +23,15 @@ Run main.py like
 python main.py
 then browse to http://localhost:8080/
 
-On WEMOS
+## On WEMOS
 
 Run following command:
 
 sudo ampy -p /dev/ttyUSB0 put main.py 
-Troubleshooting
 
-Resetting Device
+# Troubleshooting
+
+##### Resetting Device
 
 If for any reason your device is struct, you may need to reset and reflash it.
 
