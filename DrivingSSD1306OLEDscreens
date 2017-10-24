@@ -1,0 +1,33 @@
+
+Driving SSD1306 OLED screens
+
+Python module for driving such OLED screens can be pulled from MicroPython's Git repo:
+
+wget https://raw.githubusercontent.com/micropython/micropython/master/drivers/display/ssd1306.py
+ampy -p /dev/ttyUSB0 put ssd1306.py
+
+Random ESP32 based board with a screen from AliExpress used I2C interface but the chip also supports SPI interace. In this case the I2C interace is bit banged on pins 4 and 5.
+
+To paste chunks of indented text like the one below press Ctrl-E, paste the text as usual by right clicking in the terminal and selecting Paste. Once finished press Ctrl-D to tell Python interpreter that you're done.
+
+from time import sleep_ms
+from machine import Pin, I2C
+from ssd1306 import SSD1306_I2C
+
+i2c = I2C(-1, Pin(4),Pin(5),freq=400000) # Bitbanged I2C bus
+assert 60 in i2c.scan(), "No OLED display detected!"
+oled = SSD1306_I2C(128, 64, i2c)
+buf = "wubba lubba dub dub  "
+oled.invert(0) # White text on black background
+oled.contrast(255) # Maximum contrast
+j = 0
+
+while True:
+    oled.fill(0)
+
+    oled.text(buf[j%len(buf):]+buf, 10, 10)
+    oled.show()
+    sleep_ms(20)
+    j += 1
+    
+And it works!
