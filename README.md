@@ -18,7 +18,7 @@ cd IoT-Server
 
 On your machine
 
-Run main.py like
+Run '''main.py''' like
 
 python main.py
 then browse to http://localhost:8080/
@@ -42,6 +42,7 @@ esp32:
 wget http://micropython.org/resources/firmware/esp32-20171017-v1.9.2-279-g090b6b80.bin
 sudo esptool.py -p /dev/ttyUSB0 -b 460800 erase_flash
 sudo esptool.py -p /dev/ttyUSB0 -b 460800 write_flash --flash_mode dio 0x1000 esp32-*.bin
+
 esp8266:
 
 wget http://micropython.org/resources/firmware/esp8266-20170612-v1.9.1.bin
