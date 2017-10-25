@@ -7,7 +7,7 @@ CONTENT = """\
 HTTP/1.0 200 OK
 Content-Type: text/html
 
-<html>
+<html> 
   <head>
   </head>
   <body>
@@ -26,7 +26,7 @@ def main():
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind(addr)
     s.listen(5)
-    print("Listening, connect your browser to http://<this_host>:8080/")
+    print("Listening,  connect your browser to http://<this_host>:8080/")
 
     counter = 0
     while True:
