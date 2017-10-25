@@ -18,7 +18,7 @@ cd IoT-Server
 
 On your machine
 
-Run ```sh main.py ``` like
+Run ``` main.py ``` like
 
 python main.py
 then browse to http://localhost:8080/
