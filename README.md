@@ -23,7 +23,7 @@ Run ``` main.py ``` like
 python main.py
 then browse to http://localhost:8080/
 
-## On WEMOS
+## On WEMOS 
 
 Run following command:
 
@@ -46,6 +46,7 @@ wget http://micropython.org/resources/firmware/esp32-20171017-v1.9.2-279-g090b6b
 sudo esptool.py -p /dev/ttyUSB0 -b 460800 erase_flash
 sudo esptool.py -p /dev/ttyUSB0 -b 460800 write_flash --flash_mode dio 0x1000 esp32-*.bin
 ```
+
 esp8266:
 
 ```sh

@@ -1,13 +1,13 @@
-# Makefile for the board
+# Makefile for the board check the type of board you have
 
 NAME=esp32-20171017-v1.9.2-279-g090b6b80.bin
 
 deploy:
-	wget -c http://micropython.org/resources/firmware/${NAME}
+	wget -c http://micropython.org/resources/firmware/${NAME} 
 	esptool.py -p /dev/ttyUSB0 -b 460800 erase_flash
 	esptool.py -p /dev/ttyUSB0 -b 460800 write_flash --flash_mode dio 0x1000 ${NAME}
 	sleep 5
-	#pip install adafruit-ampy # Install Adafruit MicroPython Tool
+	#pip install adafruit-ampy # Install Adafruit MicroPython Tool 
 	ampy -p /dev/ttyUSB0 put main.py
 	ampy -p /dev/ttyUSB0 put boot.py
 	echo "Press reset button on the board to reload the scripts"
